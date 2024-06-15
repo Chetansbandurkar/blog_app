@@ -1,0 +1,17 @@
+1. npm i express mongoose dotenv cors bcrypt jsonwebtoken cookie-parser multer
+2. index.js center for all flow routes               
+3.declare the port 
+4. connection established with the database 
+5. Create the ENV file to sore the DB url as it will not visible to any one ,declare the port no and the DB URl
+6. Creat the models
+7.move to routes->auth 
+8. if user wants to create or delete the account ->>>verifyToken.js
+9. axios uses
+10.cors in register page ?
+11. set user in register "something went wrong" 
+create context in usercontext file
+{withCredentials: true}: This option tells Axios to include cookies sent by the server in the subsequent requests. This is important for maintaining user sessions on an authenticated API.
+->>
+after Refreshong we don't want to get logout so we 
+multer used ??
+why multer ->multer use only in form data
