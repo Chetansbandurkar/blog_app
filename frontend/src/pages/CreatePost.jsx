@@ -13,6 +13,7 @@ const CreatePost = () => {
     const [desc,setDesc]=useState("")
     const [file,setFile]=useState(null)
     const {user}=useContext(UserContext);
+    console.log(user);
     const [cat, setCat] = useState("");
     const [cats, setCats] = useState([]);
     const navigate=useNavigate()

@@ -4,12 +4,12 @@ const PostSchema=new mongoose.Schema({
     title:{
         type: 'string',
         required: true,
-        unique: true
+      
     },
     desc:{
         type: 'string',
         required: true,
-        unique: true
+        
     },
     photo:{
         type: 'string',
