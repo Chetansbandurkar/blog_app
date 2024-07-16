@@ -9,6 +9,10 @@ const userRoute=require('./routes/users');
 const postRoute=require('./routes/posts');
 const commentRoute=require('./routes/comments');
 const cookieParser=require('cookie-parser');
+app.use(cors({
+    origin: '*',
+    credentials: true
+  }));
 
 // database!
 const mongoose=require('mongoose')
@@ -26,7 +30,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use("/images",express.static(path.join(__dirname,"/images")))
-app.use(cors({origin:'*',credentials:true}));
+
 // Specifying the origin in the cors middleware configuration is important for security reasons. By setting the origin to a specific URL, you restrict which origins (websites) are allowed to access your server. This helps prevent unwanted or malicious requests from unauthorized origins
 app.use("/api/auth",authRoute);
 app.use('/api/user',userRoute);
