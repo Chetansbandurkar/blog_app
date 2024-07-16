@@ -10,7 +10,7 @@ const postRoute=require('./routes/posts');
 const commentRoute=require('./routes/comments');
 const cookieParser=require('cookie-parser');
 app.use(cors({
-    origin: "*"
+    origin: "https://bloggingfellow.netlify.app"
   }));
 
 // database!
