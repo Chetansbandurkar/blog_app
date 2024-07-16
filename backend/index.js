@@ -26,7 +26,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use("/images",express.static(path.join(__dirname,"/images")))
-app.use(cors({origin:"http://localhost:5173",credentials:true}));
+app.use(cors({origin:'*'}));
 // Specifying the origin in the cors middleware configuration is important for security reasons. By setting the origin to a specific URL, you restrict which origins (websites) are allowed to access your server. This helps prevent unwanted or malicious requests from unauthorized origins
 app.use("/api/auth",authRoute);
 app.use('/api/user',userRoute);
