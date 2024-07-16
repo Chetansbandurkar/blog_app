@@ -45,7 +45,7 @@ const PostDetails = () => {
     const handleDeletePost = async () => {
         try {
             // eslint-disable-next-line no-unused-vars
-            const res = await axios.delete(URL + "/api/posts/" + postId, { withCredentials: true })
+            const res = await axios.delete(URL + "/api/posts/" + postId)
             //  console.log(res.data);
             navigate("/");
         }
@@ -76,8 +76,8 @@ const PostDetails = () => {
         try {
             // id check
             const res=await axios.post(URL+"/api/comments/create",
-                {comment:comment,author:user.username,postId:postId,userId:user.id},
-                {withCredentials:true})
+                {comment:comment,author:user.username,postId:postId,userId:user.id}
+                )
             console.log(res.data);
             // setComment("")
             // fetchPostComments()

@@ -38,7 +38,7 @@ const Profile = () => {
     const handleUserUpdate=async()=>{
         setUpdated(false)
         try{
-            const res =await axios.put(URL +"/api/user/"+user.id,{username,email,password},{withcredentials:true})
+            const res =await axios.put(URL +"/api/user/"+user.id,{username,email,password})
             console.log(res.data);
             setUpdated(true);
         }catch(err){
@@ -50,7 +50,7 @@ const Profile = () => {
 
     const handleUserDelete=async()=>{
         try{
-            const res =await axios.delete(URL +"/api/user/"+user.id,{withcredentials:true})
+            const res =await axios.delete(URL +"/api/user/"+user.id)
             // console.log(res.data);
             setUser(null);
             navigate("/")
