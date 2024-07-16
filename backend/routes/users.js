@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
-const bcrypt=require('bcrypt');
+const bcrypt=require('bcryptjs');
 const Post=require('../models/Post');
 const Comment=require('../models/Comment');
 const verifyToken = require('../verifyToken');
@@ -33,9 +33,15 @@ router.delete("/:id",  async (req, res) => {
     }
 })
 
-// GETUSER
+// GETUS
+router.get("/123",(req,res)=>{
+    console.log("it's working");
+    res.send("hello");
+    
+})
 router.get("/:id", async (req, res) => {
     try{
+        // console.log("get user");
         const user =await User.findById(req.params.id);
         const {password,...info}=user._doc;
         res.status(200).json(info);
