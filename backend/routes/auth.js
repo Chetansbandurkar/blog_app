@@ -24,10 +24,12 @@ router.post('/register', async (req, res) => {
 // LOGIN
 router.post("/login", async (req, res) => {
     try {
+        console.log("It hit the login page");
         const user = await User.findOne({ email: req.body.email });
         if (!user) {
             return res.status(404).json("user not found");
         }
+        console.log("going well till this");
         // using compare instead of campareSynced = 
         // https://stackoverflow.com/questions/69324159/bcrypt-compare-or-bcrypt-comparesync
         const match=await bcrypt.compare(req.body.password, user.password);
