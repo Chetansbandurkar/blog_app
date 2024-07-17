@@ -75,10 +75,19 @@ const PostDetails = () => {
         e.preventDefault();
         try {
             // id check
-            const res=await axios.post(URL+"/api/comments/create",
-                {comment:comment,author:user.username,postId:postId,userId:user.id},{ withCredentials: true,credentials: 'include',
-}
-                )
+            const res = await axios.post(
+                URL + "/api/comments/create",
+                {
+                    comment: comment,
+                    author: user.username,
+                    postId: postId,
+                    userId: user.id
+                },
+                {
+                    withCredentials: true,
+                    credentials: 'include'
+                }
+            );
             console.log(res.data);
             // setComment("")
             // fetchPostComments()
