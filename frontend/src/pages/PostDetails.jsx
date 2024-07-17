@@ -76,7 +76,7 @@ const PostDetails = () => {
         try {
             // id check
             const res=await axios.post(URL+"/api/comments/create",
-                {comment:comment,author:user.username,postId:postId,userId:user.id},{withCredentials:true}
+                {comment:comment,author:user.username,postId:postId,userId:user.id}
                 )
             console.log(res.data);
             // setComment("")
