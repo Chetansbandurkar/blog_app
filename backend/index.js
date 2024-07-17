@@ -12,6 +12,7 @@ const cookieParser=require('cookie-parser');
 app.use(cors({
     origin: "https://bloggingfellow.netlify.app"
   }));
+  app.use(cookieParser());
 
 // database!
 const mongoose=require('mongoose')
@@ -27,7 +28,7 @@ const connectDB=async()=>{
 dotenv.config();
 // env will work after this
 app.use(express.json());
-app.use(cookieParser());
+
 app.use("/images",express.static(path.join(__dirname,"/images")))
 
 // Specifying the origin in the cors middleware configuration is important for security reasons. By setting the origin to a specific URL, you restrict which origins (websites) are allowed to access your server. This helps prevent unwanted or malicious requests from unauthorized origins
