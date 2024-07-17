@@ -30,7 +30,7 @@ const PostDetails = () => {
     const fetchPost = async () => {
         setLoader(true);
         try {
-            const res = await axios.get(URL + "/api/posts/" + postId)
+            const res = await axios.get(URL + "/api/posts/" + postId,{withCredentials: true})
             // console.log(res.data)
             setPost(res.data);
             // console.log("hello");
@@ -45,7 +45,7 @@ const PostDetails = () => {
     const handleDeletePost = async () => {
         try {
             // eslint-disable-next-line no-unused-vars
-            const res = await axios.delete(URL + "/api/posts/" + postId)
+            const res = await axios.delete(URL + "/api/posts/" + postId,{withCredentials: true})
             //  console.log(res.data);
             navigate("/");
         }
@@ -59,7 +59,7 @@ const PostDetails = () => {
 
     const fetchPostComments = async () => {
         try {
-            const res = await axios.get(URL + "/api/comments/post/" + postId)
+            const res = await axios.get(URL + "/api/comments/post/" + postId,{withCredentials: true})
             // console.log(res.data);
             setComments(res.data);
         } catch (err) {
@@ -76,7 +76,7 @@ const PostDetails = () => {
         try {
             // id check
             const res=await axios.post(URL+"/api/comments/create",
-                {comment:comment,author:user.username,postId:postId,userId:user.id},{ credentials: 'include'}
+                {comment:comment,author:user.username,postId:postId,userId:user.id},{ withCredentials: true}
                 )
             console.log(res.data);
             // setComment("")
