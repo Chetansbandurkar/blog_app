@@ -16,7 +16,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const res=await axios.post(URL+"/api/auth/login", {email,password});
+      const res=await axios.post(URL+"/api/auth/login", {email,password},{ credentials: 'include'});
 
       console.log("login Successfull");
       // console.log(res.data);
