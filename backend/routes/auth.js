@@ -42,7 +42,7 @@ router.post("/login", async (req, res) => {
         // as the password is present int the user.-doc nto int direact user is
         // if u conslve user it u will get it
         const {password,...info}=user._doc
-        console.log("toke generated is ",token, { maxAge: 900000, httpOnly: true });
+        console.log("toke generated is ",token);
         res.cookie("token",token).status(200).json(info);
     }
     catch (err) {
