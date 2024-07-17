@@ -8,7 +8,7 @@ const authRoute=require('./routes/auth');
 const userRoute=require('./routes/users');
 const postRoute=require('./routes/posts');
 const commentRoute=require('./routes/comments');
-const cookieParser=require('cookie-parser');
+const cookieParser = require('cookie-parser');
 app.use(cors({
     origin: "https://bloggingfellow.netlify.app",
     credentials: true,
