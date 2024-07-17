@@ -82,7 +82,7 @@ const PostDetails = () => {
                     author: user.username,
                     postId: postId,
                     userId: user.id,
-                    token:cookies.get('token')
+                    
                 },
                 {
                     withCredentials: true,
