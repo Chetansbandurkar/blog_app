@@ -83,10 +83,6 @@ const PostDetails = () => {
                     postId: postId,
                     userId: user.id,
                     
-                },
-                {
-                    withCredentials: true,
-                    credentials: 'include'
                 }
             );
             console.log(res.data);

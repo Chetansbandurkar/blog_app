@@ -20,7 +20,7 @@ const mongoose=require('mongoose')
 const connectDB=async()=>{
     try{
         await mongoose.connect(process.env.MONGO_URL);
-        console.log("databse connnected successfuly")
+        console.log("databse connnected successfuly");
     }catch(err){
         console.log(err);
     }
@@ -60,5 +60,3 @@ app.listen(process.env.PORT,()=>{
     connectDB();
     console.log("app is runnig on port 5000")
 })
-
-

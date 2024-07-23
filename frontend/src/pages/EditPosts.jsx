@@ -22,7 +22,7 @@ const EditPosts = () => {
 
   const fetchPost = async () => {
     try {
-      const res = await axios.get(URL + "/api/posts/" + postId,{withCredentials: true})
+      const res = await axios.get(URL + "/api/posts/" + postId)
 
       // console.log(res.data)
       setTitle(res.data.title)
@@ -58,7 +58,7 @@ const EditPosts = () => {
       post.photo = filename
       try {
         // eslint-disable-next-line no-unused-vars
-        const imgUpload = await axios.post(URL + "/api/upload", data,{withCredentials: true})
+        const imgUpload = await axios.post(URL + "/api/upload", data)
         // console.log(imgUpload.data);
       }
       catch (err) {
@@ -68,7 +68,7 @@ const EditPosts = () => {
   
   // post upload
   try {
-    const res = await axios.put(URL + "/api/posts/"+postId, post,{withCredentials: true})
+    const res = await axios.put(URL + "/api/posts/"+postId, post)
     // console.log(res)/
     navigate("/posts/post/" + res.data._id);
 
